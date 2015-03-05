@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>LibVirtual68HC11.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>UnitTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>520B8FC41AA8D603007B6BFE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>520B8FDC1AA8FF26007B6BFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

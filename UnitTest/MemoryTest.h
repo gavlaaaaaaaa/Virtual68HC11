@@ -9,12 +9,14 @@
 #ifndef __Virtual68HC11__MemoryTest__
 #define __Virtual68HC11__MemoryTest__
 
+
 #include "gtest/gtest.h"
 
 class MemoryTest : public ::testing::Test {
     
 public:
-    void dummy_test();
+    //Test 1
+    void permitted_write();
     
 };
 
