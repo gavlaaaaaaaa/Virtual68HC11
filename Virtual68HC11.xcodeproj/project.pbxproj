@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		520B8F971AA8D079007B6BFE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 520B8F961AA8D079007B6BFE /* main.cpp */; };
 		520B8F991AA8D079007B6BFE /* Virtual68HC11.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 520B8F981AA8D079007B6BFE /* Virtual68HC11.1 */; };
+		520B8FC81AA8D603007B6BFE /* TestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 520B8FC71AA8D603007B6BFE /* TestSuite.cpp */; };
+		520B8FCA1AA8D603007B6BFE /* UnitTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 520B8FC91AA8D603007B6BFE /* UnitTest.1 */; };
+		520B8FD01AA8D660007B6BFE /* MemoryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 520B8FCE1AA8D660007B6BFE /* MemoryTest.cpp */; };
+		520B8FD11AA8D71C007B6BFE /* gtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520B8FA11AA8D4A0007B6BFE /* gtest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,12 +26,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		520B8FC31AA8D603007B6BFE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				520B8FCA1AA8D603007B6BFE /* UnitTest.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		520B8F931AA8D079007B6BFE /* Virtual68HC11 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Virtual68HC11; sourceTree = BUILT_PRODUCTS_DIR; };
 		520B8F961AA8D079007B6BFE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		520B8F981AA8D079007B6BFE /* Virtual68HC11.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Virtual68HC11.1; sourceTree = "<group>"; };
+		520B8FA11AA8D4A0007B6BFE /* gtest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gtest.framework; path = "../../../../Library/GooleTest/gtest-1.7.0/xcode/DerivedData/gtest/Build/Products/Debug/gtest.framework"; sourceTree = "<group>"; };
+		520B8FC51AA8D603007B6BFE /* UnitTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UnitTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		520B8FC71AA8D603007B6BFE /* TestSuite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestSuite.cpp; sourceTree = "<group>"; };
+		520B8FC91AA8D603007B6BFE /* UnitTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = UnitTest.1; sourceTree = "<group>"; };
+		520B8FCE1AA8D660007B6BFE /* MemoryTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MemoryTest.cpp; sourceTree = "<group>"; };
+		520B8FCF1AA8D660007B6BFE /* MemoryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +58,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		520B8FC21AA8D603007B6BFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				520B8FD11AA8D71C007B6BFE /* gtest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -45,7 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				520B8F951AA8D079007B6BFE /* Virtual68HC11 */,
+				520B8FC61AA8D603007B6BFE /* UnitTest */,
 				520B8F941AA8D079007B6BFE /* Products */,
+				520B8FA01AA8D450007B6BFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				520B8F931AA8D079007B6BFE /* Virtual68HC11 */,
+				520B8FC51AA8D603007B6BFE /* UnitTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +95,25 @@
 				520B8F981AA8D079007B6BFE /* Virtual68HC11.1 */,
 			);
 			path = Virtual68HC11;
+			sourceTree = "<group>";
+		};
+		520B8FA01AA8D450007B6BFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				520B8FA11AA8D4A0007B6BFE /* gtest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		520B8FC61AA8D603007B6BFE /* UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				520B8FC71AA8D603007B6BFE /* TestSuite.cpp */,
+				520B8FC91AA8D603007B6BFE /* UnitTest.1 */,
+				520B8FCE1AA8D660007B6BFE /* MemoryTest.cpp */,
+				520B8FCF1AA8D660007B6BFE /* MemoryTest.h */,
+			);
+			path = UnitTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +134,23 @@
 			name = Virtual68HC11;
 			productName = Virtual68HC11;
 			productReference = 520B8F931AA8D079007B6BFE /* Virtual68HC11 */;
+			productType = "com.apple.product-type.tool";
+		};
+		520B8FC41AA8D603007B6BFE /* UnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 520B8FCB1AA8D603007B6BFE /* Build configuration list for PBXNativeTarget "UnitTest" */;
+			buildPhases = (
+				520B8FC11AA8D603007B6BFE /* Sources */,
+				520B8FC21AA8D603007B6BFE /* Frameworks */,
+				520B8FC31AA8D603007B6BFE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTest;
+			productName = UnitTest;
+			productReference = 520B8FC51AA8D603007B6BFE /* UnitTest */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -108,6 +175,7 @@
 			projectRoot = "";
 			targets = (
 				520B8F921AA8D079007B6BFE /* Virtual68HC11 */,
+				520B8FC41AA8D603007B6BFE /* UnitTest */,
 			);
 		};
 /* End PBXProject section */
@@ -118,6 +186,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				520B8F971AA8D079007B6BFE /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		520B8FC11AA8D603007B6BFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				520B8FD01AA8D660007B6BFE /* MemoryTest.cpp in Sources */,
+				520B8FC81AA8D603007B6BFE /* TestSuite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -187,7 +264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -202,6 +279,32 @@
 		520B8F9E1AA8D079007B6BFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		520B8FCC1AA8D603007B6BFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/GooleTest/gtest-1.7.0/xcode/DerivedData/gtest/Build/Products/Debug",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		520B8FCD1AA8D603007B6BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/GooleTest/gtest-1.7.0/xcode/DerivedData/gtest/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -223,6 +326,14 @@
 			buildConfigurations = (
 				520B8F9D1AA8D079007B6BFE /* Debug */,
 				520B8F9E1AA8D079007B6BFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		520B8FCB1AA8D603007B6BFE /* Build configuration list for PBXNativeTarget "UnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				520B8FCC1AA8D603007B6BFE /* Debug */,
+				520B8FCD1AA8D603007B6BFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
