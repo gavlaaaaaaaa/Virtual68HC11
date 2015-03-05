@@ -3,7 +3,7 @@
    LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
-      parallelizeBuildables = "YES"
+      parallelizeBuildables = "NO"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
@@ -17,6 +17,20 @@
                BlueprintIdentifier = "520B8F921AA8D079007B6BFE"
                BuildableName = "Virtual68HC11"
                BlueprintName = "Virtual68HC11"
+               ReferencedContainer = "container:Virtual68HC11.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "520B8FDC1AA8FF26007B6BFE"
+               BuildableName = "libLibVirtual68HC11.a"
+               BlueprintName = "LibVirtual68HC11"
                ReferencedContainer = "container:Virtual68HC11.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
