@@ -33,8 +33,6 @@ namespace CPU_6811 {
         void write(const byte& p_Address, const byte& p_Value);
         
         const byte& read(const byte& p_Address);
-        
-    
 
 };
     

@@ -12,7 +12,8 @@ namespace CPU_6811 {
     
     Memory::Memory():
     c_MaxAddress(768),
-    theMemory(new byte[c_MaxAddress]){}
+    theMemory(new byte[c_MaxAddress])
+    {}
     
     Memory::~Memory(){}
 
