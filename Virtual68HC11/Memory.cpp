@@ -10,16 +10,20 @@
 
 namespace CPU_6811 {
     
-    Memory::Memory(){}
+    Memory::Memory():
+    c_MaxMemSize(768),
+    p_TheMemory(new byte[c_MaxMemSize])
+    {
+    }
     
     Memory::~Memory(){}
 
     void Memory::write(const byte& p_Address, const byte& p_Value){
-        
+        p_TheMemory[p_Address] = p_Value;
     }
 
     const byte& Memory::read(const byte& p_Address){
-        return 10;
+        return p_TheMemory[p_Address];
     }
 
 }

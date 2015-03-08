@@ -18,6 +18,12 @@ namespace CPU_6811 {
 
 
     class Memory{
+        
+    private:
+        byte* p_TheMemory;
+        
+    public:
+        int c_MaxMemSize;
     
     public:
         Memory();
