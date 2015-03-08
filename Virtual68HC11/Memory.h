@@ -18,6 +18,12 @@ namespace CPU_6811 {
 
 
     class Memory{
+        
+    public:
+        const byte c_MaxAddress;
+        
+    private:
+        byte* theMemory;
     
     public:
         Memory();
@@ -27,7 +33,8 @@ namespace CPU_6811 {
         void write(const byte& p_Address, const byte& p_Value);
         
         const byte& read(const byte& p_Address);
-
+        
+    
 
 };
     

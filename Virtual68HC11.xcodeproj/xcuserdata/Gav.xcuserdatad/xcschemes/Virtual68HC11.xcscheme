@@ -34,6 +34,20 @@
                ReferencedContainer = "container:Virtual68HC11.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "520B8FC41AA8D603007B6BFE"
+               BuildableName = "UnitTest"
+               BlueprintName = "UnitTest"
+               ReferencedContainer = "container:Virtual68HC11.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
