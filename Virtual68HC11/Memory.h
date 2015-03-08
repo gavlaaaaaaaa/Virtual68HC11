@@ -30,9 +30,9 @@ namespace CPU_6811 {
         
         ~Memory();
         
-        void write(const byte& p_Address, const byte& p_Value);
+        void write(const int& p_Address, const byte& p_Value);
         
-        const byte& read(const byte& p_Address);
+        const byte& read(const int& p_Address);
 
 
 };

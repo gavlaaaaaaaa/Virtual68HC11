@@ -18,12 +18,25 @@ namespace CPU_6811 {
     
     Memory::~Memory(){}
 
-    void Memory::write(const byte& p_Address, const byte& p_Value){
-        p_TheMemory[p_Address] = p_Value;
+    void Memory::write(const int& p_Address, const byte& p_Value){
+        if(p_Address > c_MaxMemSize){
+            fprintf(stderr, "Address out of bounds - could not complete write\n");
+            exit(1);
+        }
+        else{
+            p_TheMemory[p_Address] = p_Value;
+        }
     }
 
-    const byte& Memory::read(const byte& p_Address){
-        return p_TheMemory[p_Address];
+    const byte& Memory::read(const int& p_Address){
+        if(p_Address > c_MaxMemSize){
+            fprintf(stderr, "Address out of bounds - could not complete read\n");
+            exit(1);
+        }
+        else{
+            return p_TheMemory[p_Address];
+        }
+        
     }
 
 }
