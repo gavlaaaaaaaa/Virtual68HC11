@@ -15,6 +15,7 @@ namespace CPU_6811 {
     theMemory(new byte[c_MaxAddress])
     {}
     
+    
     Memory::~Memory(){}
 
     void Memory::write(const byte& p_Address, const byte& p_Value){
