@@ -37,6 +37,13 @@ public:
     //Test 4
     void bad_read();
     
+    //Test 5
+    void overwrite();
+    
+    //Test 6
+    void double_write();
+    
+    
 };
 
 #endif /* defined(__Virtual68HC11__MemoryTest__) */
