@@ -9,7 +9,7 @@
 #include "Memory.h"
 #include "MemoryTest.h"
 
-void MemoryTest::init(const int& addr, const CPU_6811::byte& val){
+void MemoryTest::init(const int& addr, const char& val){
     mem = new CPU_6811::Memory();
     address = addr;
     value = val;
@@ -109,6 +109,21 @@ void MemoryTest::double_write(){
     EXPECT_EQ((int)value, (int)mem->read(address));
     
     de_init();
+}
+
+
+//Test 7
+TEST_F(MemoryTest, CheckClear){
+    check_clear();
+}
+void MemoryTest::check_clear(){
+    init(1,1);
+    //Initialise memory variable - should call clear()
     
+    for(int i = 0; i < mem->c_MaxMemSize; ++i){
+        EXPECT_EQ(0, (int)mem->read(i));
+    }
+    
+    de_init();
     
 }

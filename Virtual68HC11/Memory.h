@@ -10,29 +10,32 @@
 #define __Virtual68HC11__Memory__
 
 #include <iostream>
+#include <array>
 
 namespace CPU_6811 {
     
-    //byte sized char to act as a byte
-    typedef unsigned char byte;
-
-
     class Memory{
         
+    
+        
     private:
-        byte* p_TheMemory;
+        std::array<char, 768> p_TheMemory;
         
     public:
         int c_MaxMemSize;
+        
+    private:
+        
+        void clear();
     
     public:
         Memory();
         
         ~Memory();
         
-        void write(const int& p_Address, const byte& p_Value);
+        void write(const int& p_Address, const char& p_Value);
         
-        const byte& read(const int& p_Address);
+        const char& read(const int& p_Address);
 
 
 };

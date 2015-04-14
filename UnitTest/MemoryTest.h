@@ -17,11 +17,11 @@ class MemoryTest : public ::testing::Test {
 private:
     CPU_6811::Memory* mem;
     int address;
-    CPU_6811::byte value;
+    char value;
     
 public:
     
-    void init(const int& addr, const CPU_6811::byte& val);
+    void init(const int& addr, const char& val);
     
     void de_init();
     
@@ -43,6 +43,8 @@ public:
     //Test 6
     void double_write();
     
+    //Test 7
+    void check_clear();
     
 };
 

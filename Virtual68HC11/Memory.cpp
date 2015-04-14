@@ -11,14 +11,22 @@
 namespace CPU_6811 {
     
     Memory::Memory():
-    c_MaxMemSize(768),
-    p_TheMemory(new byte[c_MaxMemSize])
+    c_MaxMemSize(768)
     {
+        clear();
     }
     
-    Memory::~Memory(){}
+    Memory::~Memory(){
+        
+    }
 
-    void Memory::write(const int& p_Address, const byte& p_Value){
+    void Memory::clear(){
+        for(int i = 0; i < c_MaxMemSize; ++i){
+            p_TheMemory[i] = 0;
+        }
+    }
+    
+    void Memory::write(const int& p_Address, const char& p_Value){
         if(p_Address > c_MaxMemSize){
             fprintf(stderr, "Address out of bounds - could not complete write\n");
             exit(1);
@@ -28,7 +36,7 @@ namespace CPU_6811 {
         }
     }
 
-    const byte& Memory::read(const int& p_Address){
+    const char& Memory::read(const int& p_Address){
         if(p_Address > c_MaxMemSize){
             fprintf(stderr, "Address out of bounds - could not complete read\n");
             exit(1);
