@@ -37,6 +37,8 @@ namespace CPU_6811 {
         //Halt flag
         bool b_halt;
         
+        const std::string ops_metadata_path = "/Users/Gav/Documents/Programming/Virtual68HC11/Virtual68HC11/6811_ops_metadata.csv";
+        
         std::shared_ptr<Memory> m_TheMemory;
         const int8_t Fetch();
         void Decode(const int8_t& p_OpCode);
@@ -45,6 +47,7 @@ namespace CPU_6811 {
         void Beep();
         void Store();
         void Print();
+        
         
         
     public:

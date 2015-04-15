@@ -9,6 +9,8 @@
 #include "CPU.h"
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 namespace CPU_6811
 {
@@ -94,6 +96,34 @@ namespace CPU_6811
         }
         
         //Opcode vector is empty... so lets initialise it
+
+        std::ifstream opcode_file(ops_metadata_path);
+        std::string curr_line = "";
+        
+        std::string name, prebyte, opcode, total_size, temp;
+        int op_size = 1;
+        std::getline(opcode_file, curr_line);
+        
+        std::string prev_name = "";
+        while(std::getline(opcode_file, curr_line)){
+            
+            std::istringstream split_me(curr_line);
+            std::getline(split_me, name,',');
+            std::getline(split_me, prebyte,',');
+            std::getline(split_me, opcode,',');
+            //throw away operands for now
+            std::getline(split_me, temp, ',');
+            std::getline(split_me, total_size,',');
+            
+            if (name == "") { name = prev_name; } else { prev_name = name; }
+            if (!std::isdigit(prebyte[0])){ prebyte = ""; } else { op_size++; }
+            std::cout << prebyte << std::endl;
+            opcodes.push_back(Opcode(name, prebyte, opcode, op_size, std::stoi(total_size)));
+            // reset op_size;
+            op_size = 1;
+        }
+        
+        
         
         return opcodes;
     }
