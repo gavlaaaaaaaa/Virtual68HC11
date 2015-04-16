@@ -42,7 +42,15 @@ int main(int argc, const char * argv[])
 
     std::vector<CPU_6811::Opcode> ops = theCPU->get_opcodes();
     
-    ops.empty();
+    theCPU->set_result('X', 300);
+    theCPU->set_result('Y', 300);
+    theCPU->Add('X', 'Y', 'Z', false);
+    std::cout << sizeof(int) <<std::endl;
+    std::cout << sizeof(int8_t) <<std::endl;
+    std::cout << sizeof(int16_t) <<std::endl;
+    std::cout << (int)theCPU->ACC_A << std::endl;
+    std::cout << (int)theCPU->ACC_B << std::endl;
+    
     
     return 0;
 }

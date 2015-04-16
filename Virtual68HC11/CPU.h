@@ -22,16 +22,16 @@ namespace CPU_6811 {
         const int c_BaseAddress;
         const int c_AddressCeiling;
         
-    private:
+    public:
         //accumulators and registers
         std::vector<Opcode> opcodes;
-        int8_t ACC_A;
-        int8_t ACC_B;
-        int16_t DBL_ACC_D;
-        int16_t REG_X;
-        int16_t REG_Y;
-        int16_t SP;
-        int16_t PC;
+        uint8_t ACC_A;
+        uint8_t ACC_B;
+        uint16_t DBL_ACC_D;
+        uint16_t REG_X;
+        uint16_t REG_Y;
+        uint16_t SP;
+        uint16_t PC;
         //condition code register values
         bool b_carry, b_overflow, b_zero, b_negative, b_interrupt, b_half, b_Xinterrupt, b_stop_disable;
         //Halt flag
@@ -40,15 +40,13 @@ namespace CPU_6811 {
         const std::string ops_metadata_path = "/Users/Gav/Documents/Programming/Virtual68HC11/Virtual68HC11/6811_ops_metadata.csv";
         
         std::shared_ptr<Memory> m_TheMemory;
-        const int8_t Fetch();
-        void Decode(const int8_t& p_OpCode);
+        const uint8_t Fetch();
+        void Decode(const uint8_t& p_OpCode);
         void Halt();
-        void Add();
-        void Beep();
-        void Store();
-        void Print();
+        void Add(char left, char right, char result_location, bool carry);
         
-        
+        int get_value(char loc);
+        void set_result(char loc, uint16_t result);
         
     public:
         CPU(std::shared_ptr<Memory> p_TheMemory);

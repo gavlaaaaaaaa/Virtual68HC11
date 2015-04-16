@@ -117,7 +117,7 @@ namespace CPU_6811
             
             if (name == "") { name = prev_name; } else { prev_name = name; }
             if (!std::isdigit(prebyte[0])){ prebyte = ""; } else { op_size++; }
-            std::cout << prebyte << std::endl;
+
             opcodes.push_back(Opcode(name, prebyte, opcode, op_size, std::stoi(total_size)));
             // reset op_size;
             op_size = 1;
@@ -126,6 +126,62 @@ namespace CPU_6811
         
         
         return opcodes;
+    }
+    
+    int CPU::get_value(char loc){
+        
+        switch (loc) {
+            case 'A':
+                return ACC_A;
+                break;
+            case 'B':
+                return ACC_B;
+                break;
+            case 'X':
+                return REG_X;
+                break;
+            case 'Y':
+                return REG_Y;
+                break;
+            default:
+                return 0;
+                break;
+        }
+    }
+    
+    void CPU::set_result(char loc, int16_t result){
+        
+        switch (loc) {
+            case 'A':
+                ACC_A = result;
+                break;
+            case 'B':
+                ACC_B = result;
+                break;
+            case 'X':
+                REG_X = result;
+                break;
+            case 'Y':
+                REG_Y = result;
+                break;
+                // 'Z' means split result into A and B
+            case 'Z':
+                ACC_A = result >> 8;
+                ACC_B = result & 0xFF;
+                break;
+            default:
+                //TODO: throw a proper error here
+                std::cout << "ERROR: INCORRECT LOCATION GIVEN TO SET_RESULT" << std::endl;
+                break;
+        }
+    }
+    
+    
+    void CPU::Add(char left, char right, char result_location, bool carry){
+        int16_t result = get_value(left) + get_value(right);
+
+        set_result(result_location, result);
+        
     }
     
 
